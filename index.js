@@ -1,7 +1,7 @@
-let toNumber = 100000; //Number you want to count
+let toNumber = 100000;
 
-function primCheck(number) {
-    let notPrim = 0;
+function primeCheck(number) {
+    let notPrime = 0;
     for (let i = 1; i <= number; i++) {
         let modulo = number % i;
         if (i === 1 || i === number) {
@@ -9,18 +9,14 @@ function primCheck(number) {
         }
         
         if (modulo != 0) {
-            notPrim++;
+            notPrime++;
         }
         
-        //console.log("Ergebniss von derzeitigem Modulo Aufruf: " + modulo)
     }
     
-    //console.log("notPrim = " + notPrim)
-    if (notPrim != number - 2) {
-        //console.log("Keine Primzahl")
+    if (notPrime != number - 2) {
         return false;
     } else {
-        //console.log("Primzahl!")
         return true;
     }
 }
@@ -31,11 +27,11 @@ function reverse(n) {
 }
 //stackoverflow end
 
+
 for (let x = 1; x <= toNumber; x++) {
     let reverseNumber = reverse(x);
-    if (primCheck(x) == true && primCheck(reverseNumber) == true) {
-        console.log("Superprim found:" + x)
+    if (primeCheck(x) == true && primeCheck(reverseNumber) == true) {
+        console.log("Reverse found:" + x)
     } else {
-        //console.log("Not found!")
     }
 } 
